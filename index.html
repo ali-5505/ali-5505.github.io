@@ -346,6 +346,55 @@ Enter state abbreviation (e.g. MI):
         </div>
       </div>
     </div>
+        <div class="project">
+      <div class="project-head">
+        <h3>Server Monitoring Dashboard</h3>
+        <span class="stack">Python · Flask · SQLite</span>
+      </div>
+      <div class="project-body">
+        <p class="desc">
+          A real-time dashboard that monitors a fleet of servers and tracks health
+          status (healthy, degraded, down) with live latency, CPU, and disk metrics.
+          A background polling thread collects readings on a schedule and writes them
+          to SQLite, while the frontend pulls from a JSON API every few seconds to
+          keep the grid updated without a page reload — the same architecture pattern
+          used by tools like Nagios or Zabbix.
+        </p>
+        <div class="terminal"><span class="dim">$ python app.py</span>
+ * Serving Flask app 'app'
+ * Running on http://127.0.0.1:5000
+<span class="ok">[web-01]   status: healthy   latency: 58ms   cpu: 39%</span>
+[api-01]   status: degraded  latency: 734ms  cpu: 82%
+<span class="ok">[db-01]    status: healthy   latency: 41ms   cpu: 35%</span></div>
+        <div class="project-links">
+          <a href="https://github.com/ali-5505/Server-Monitoring-Dashboard" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Security Log Alert Dashboard</h3>
+        <span class="stack">Python · Flask · SQLite</span>
+      </div>
+      <div class="project-body">
+        <p class="desc">
+          A dashboard that watches an authentication log in real time, parses every
+          login attempt, and raises an alert when it detects a brute-force pattern —
+          too many failed logins from the same IP within a sliding time window. Adds
+          per-IP alert-cooldown logic so one attack burst raises one alert instead of
+          several, the same suppression pattern real monitoring tools use.
+        </p>
+        <div class="terminal"><span class="dim">$ python app.py</span>
+ * Running on http://127.0.0.1:5001
+14:47:20  Failed    admin    103.45.12.88
+14:47:20  Failed    admin    103.45.12.88
+<span class="ok">ALERT [HIGH]: 5 failed logins from 103.45.12.88 in 30s window</span></div>
+        <div class="project-links">
+          <a href="https://github.com/ali-5505/Log-Alert-Dashboard" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
